@@ -11,6 +11,15 @@ mixpanel.init("54a6fdac0ed217c73a7649b8cebad335");</script><!-- end Mixpanel -->
 <body>
 <h1>Hello world!</h1>
    <h2 onclick='mixpanel.track("Video play")' >Click This</h2> 
-       <p onclick='mixpanel.identify("12148")'>new User</p>
+       <p onclick='mixpanel.people.set({
+    "$email": "jsmith@example.com",    // only special properties need the $
+    
+    "$created": "2011-03-16 16:53:54",
+    "$last_login": new Date(),         // properties can be dates...
+    
+    "credits": 150,                    // ...or numbers
+    
+    "gender": "Male"                    // feel free to define your own properties
+});'>new User</p>
 </body>
 </html>
